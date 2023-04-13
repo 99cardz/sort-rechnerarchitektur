@@ -10,6 +10,7 @@ struct handle_struct
     uint32_t KVPs;
     uint8_t verbose;
     uint8_t data_variant;
+    uint8_t sort_method;
     uint64_t nanoseconds; // timediff
 };
 

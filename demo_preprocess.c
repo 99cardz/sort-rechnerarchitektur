@@ -28,7 +28,7 @@ int _main_preprocess_getopt (struct handle_struct *h)
     int c;
     int64_t dflag;
 
-    while ((c = getopt (h->argc, h->argv, "hn:vm:")) != -1)
+    while ((c = getopt (h->argc, h->argv, "hn:vm:s:")) != -1)
         switch (c)
         {
         case 'h':
@@ -66,6 +66,19 @@ int _main_preprocess_getopt (struct handle_struct *h)
                 h->data_variant=(uint8_t)dflag;
             }
             fprintf(stderr,"\tdata generation set to mode: %u\n",h->data_variant);
+            break;
+        case 's':
+            dflag = atoi(optarg);
+            if ((0 >= dflag) || (3 < dflag))
+            {
+                fprintf(stderr,"ERROR\n");
+                fprintf(stderr,"\tSort method %ld ist unknown\n",dflag);
+            }
+            else
+            {
+                h->sort_method=(uint8_t)dflag;
+            }
+            fprintf(stderr,"\tsorting method set to: %u\n",h->data_variant);
             break;
         default:
             //abort ();
