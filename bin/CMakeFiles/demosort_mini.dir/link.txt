@@ -1,0 +1,1 @@
+gcc CMakeFiles/demosort_mini.dir/demo_sort.c.o -o demosort_mini 
