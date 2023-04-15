@@ -12,6 +12,7 @@
 #define DESC 1
 #define VAR1 2
 #define VAR2 3
+#define RAND 4
 
 /* struct holds the array to sort/sorted */
 struct mysort_data_struct {
@@ -65,6 +66,7 @@ int __gen_demo(struct mysort_data_struct *data, int8_t variant)
 		return -1;
 
 	data->_internal = (void *)ptr2uint;
+	srand(time(NULL));
 
 	for (uint32_t i = 0; i < data->len; ++i) {
 		data->array[i] = &ptr2uint[i];
@@ -91,6 +93,12 @@ int __gen_demo(struct mysort_data_struct *data, int8_t variant)
 				ptr2uint[i].value = i;
 				break;
 			}
+		case RAND:
+			{
+				ptr2uint[i].key = rand() % data->len;
+				ptr2uint[i].value = i;
+			}
+			break;
 		default:
 			{
 				ptr2uint[i].key = ptr2uint[i].value = i;
@@ -164,10 +172,10 @@ int main(int argc, char **argv)
 
 	struct mysort_data_struct data;
 
-	data.len = 10;
+	data.len = 20;
 	data.array = data._internal = NULL;
 
-	if (0 != __gen_demo(&data, VAR2))
+	if (0 != __gen_demo(&data, RAND))
 		return -1;
 
 	if (1 != argc)
