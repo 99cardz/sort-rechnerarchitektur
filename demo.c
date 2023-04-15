@@ -3,6 +3,11 @@
 #include <stdlib.h>
 #include <time.h>
 
+#include "bubble.h"
+#include "quick.h"
+#include "insert.h"
+#include "merge.h"
+
 #define ASC 0
 #define DESC 1
 #define VAR1 2
@@ -159,7 +164,7 @@ int main(int argc, char **argv)
 
 	struct mysort_data_struct data;
 
-	data.len = 10000000;
+	data.len = 10;
 	data.array = data._internal = NULL;
 
 	if (0 != __gen_demo(&data, VAR2))
@@ -171,7 +176,7 @@ int main(int argc, char **argv)
 	struct timespec start_time, stop_time;
 	clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start_time);
 
-	qsort(*data.array, data.len,
+	merge(*data.array, data.len,
 	      sizeof(struct mysort_simple_2uint_struct),
 	      __compare_simple_2uint_structs);
 
