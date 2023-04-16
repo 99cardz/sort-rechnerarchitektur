@@ -3,13 +3,14 @@
 #include <string.h>
 
 void quicksort(void *__base, size_t __nel, size_t __width, int (* _Nonnull __compar)(const void *, const void *)) {
-    char *base = (char*) __base;
     if (__nel <= 1) {
         return;
     }
-    char *pivot = base + (__nel / 2) * __width;
-    char *left = base;
-    char *right = base + (__nel - 1) * __width;
+    void *temp = (char *)malloc(__width);
+
+    void *pivot = __base + (__nel / 2) * __width;
+    void *left = __base;
+    void *right = __base + (__nel - 1) * __width;
     while (left <= right) {
         while (__compar(left, pivot) < 0) {
             left += __width;
@@ -18,14 +19,13 @@ void quicksort(void *__base, size_t __nel, size_t __width, int (* _Nonnull __com
             right -= __width;
         }
         if (left <= right) {
-            char tmp[__width];
-            memcpy(tmp, left, __width);
+            memcpy(temp, left, __width);
             memcpy(left, right, __width);
-            memcpy(right, tmp, __width);
+            memcpy(right, temp, __width);
             left += __width;
             right -= __width;
         }
     }
-    quicksort(base, (right - base) / __width + 1, __width, __compar);
-    quicksort(left, (__nel - (left - base) / __width), __width, __compar);
+    quicksort(__base, (right - __base) / __width + 1, __width, __compar);
+    quicksort(left, (__nel - (left - __base) / __width), __width, __compar);
 }
