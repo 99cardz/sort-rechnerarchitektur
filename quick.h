@@ -26,6 +26,7 @@ void quicksort(void *__base, size_t __nel, size_t __width, int (* _Nonnull __com
             right -= __width;
         }
     }
+    free(temp);
     quicksort(__base, (right - __base) / __width + 1, __width, __compar);
     quicksort(left, (__nel - (left - __base) / __width), __width, __compar);
 }
