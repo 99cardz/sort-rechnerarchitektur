@@ -1,0 +1,4 @@
+/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/bin/CMakeFiles/demosort.dir
+/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/bin/CMakeFiles/demosort_mini.dir
+/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/bin/CMakeFiles/edit_cache.dir
+/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/bin/CMakeFiles/rebuild_cache.dir

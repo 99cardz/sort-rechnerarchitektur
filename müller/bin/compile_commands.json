@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/bin",
+  "command": "gcc   -Wall -g -o CMakeFiles/demosort.dir/demo_main.c.o -c /home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/demo_main.c",
+  "file": "/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/demo_main.c",
+  "output": "CMakeFiles/demosort.dir/demo_main.c.o"
+},
+{
+  "directory": "/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/bin",
+  "command": "gcc   -Wall -g -o CMakeFiles/demosort.dir/demo_postprocess.c.o -c /home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/demo_postprocess.c",
+  "file": "/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/demo_postprocess.c",
+  "output": "CMakeFiles/demosort.dir/demo_postprocess.c.o"
+},
+{
+  "directory": "/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/bin",
+  "command": "gcc   -Wall -g -o CMakeFiles/demosort.dir/demo_preprocess.c.o -c /home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/demo_preprocess.c",
+  "file": "/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/demo_preprocess.c",
+  "output": "CMakeFiles/demosort.dir/demo_preprocess.c.o"
+},
+{
+  "directory": "/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/bin",
+  "command": "gcc   -Wall -g -o CMakeFiles/demosort.dir/demo_sort.c.o -c /home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/demo_sort.c",
+  "file": "/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/demo_sort.c",
+  "output": "CMakeFiles/demosort.dir/demo_sort.c.o"
+},
+{
+  "directory": "/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/bin",
+  "command": "gcc   -Wall -g -D ENABLE_LOCAL_MAIN -o CMakeFiles/demosort_mini.dir/demo_sort.c.o -c /home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/demo_sort.c",
+  "file": "/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/demo_sort.c",
+  "output": "CMakeFiles/demosort_mini.dir/demo_sort.c.o"
+}
+]
