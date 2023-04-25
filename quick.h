@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void quicksort(void *__base, size_t __nel, size_t __width, int (* _Nonnull __compar)(const void *, const void *)) {
+void quicksort(void *__base, size_t __nel, size_t __width, int (*  __compar)(const void *, const void *)) {
     if (__nel <= 1) {
         return;
     }

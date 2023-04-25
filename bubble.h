@@ -5,7 +5,7 @@
 #include <string.h>
 
 void bubblesort(void *__base, size_t __nel, size_t __width,
-                int (* _Nonnull __compar)(const void *, const void *)) {
+                int (* __compar)(const void *, const void *)) {
     char swapped;
     void *tmp = (char *)malloc(__width);
     do {
