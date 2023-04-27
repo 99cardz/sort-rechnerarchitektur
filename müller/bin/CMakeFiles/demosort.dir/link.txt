@@ -1,1 +1,0 @@
-gcc CMakeFiles/demosort.dir/demo_main.c.o CMakeFiles/demosort.dir/demo_postprocess.c.o CMakeFiles/demosort.dir/demo_preprocess.c.o CMakeFiles/demosort.dir/demo_sort.c.o -o demosort 

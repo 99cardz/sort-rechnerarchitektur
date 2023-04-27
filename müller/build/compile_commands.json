@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/Users/jo/Desktop/Studium/4. Semester/Rechnerarchitektur/sort/build",
-  "command": "gcc    -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Wall -g -D ENABLE_LOCAL_MAIN -o CMakeFiles/demosort_mini.dir/demo.c.o -c \"/Users/jo/Desktop/Studium/4. Semester/Rechnerarchitektur/sort/demo.c\"",
-  "file": "/Users/jo/Desktop/Studium/4. Semester/Rechnerarchitektur/sort/demo.c"
-}
-]
