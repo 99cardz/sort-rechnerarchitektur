@@ -1,0 +1,95 @@
+
+pascal.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <pascal>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	53                   	push   %rbx
+   9:	48 83 ec 28          	sub    $0x28,%rsp
+   d:	89 7d dc             	mov    %edi,-0x24(%rbp)
+  10:	89 75 d8             	mov    %esi,-0x28(%rbp)
+  13:	83 7d d8 00          	cmpl   $0x0,-0x28(%rbp)
+  17:	74 08                	je     21 <pascal+0x21>
+  19:	8b 45 dc             	mov    -0x24(%rbp),%eax
+  1c:	3b 45 d8             	cmp    -0x28(%rbp),%eax
+  1f:	75 09                	jne    2a <pascal+0x2a>
+  21:	c7 45 ec 01 00 00 00 	movl   $0x1,-0x14(%rbp)
+  28:	eb 2e                	jmp    58 <pascal+0x58>
+  2a:	8b 45 d8             	mov    -0x28(%rbp),%eax
+  2d:	8d 50 ff             	lea    -0x1(%rax),%edx
+  30:	8b 45 dc             	mov    -0x24(%rbp),%eax
+  33:	83 e8 01             	sub    $0x1,%eax
+  36:	89 d6                	mov    %edx,%esi
+  38:	89 c7                	mov    %eax,%edi
+  3a:	e8 00 00 00 00       	call   3f <pascal+0x3f>
+  3f:	89 c3                	mov    %eax,%ebx
+  41:	8b 45 dc             	mov    -0x24(%rbp),%eax
+  44:	8d 50 ff             	lea    -0x1(%rax),%edx
+  47:	8b 45 d8             	mov    -0x28(%rbp),%eax
+  4a:	89 c6                	mov    %eax,%esi
+  4c:	89 d7                	mov    %edx,%edi
+  4e:	e8 00 00 00 00       	call   53 <pascal+0x53>
+  53:	01 d8                	add    %ebx,%eax
+  55:	89 45 ec             	mov    %eax,-0x14(%rbp)
+  58:	8b 4d ec             	mov    -0x14(%rbp),%ecx
+  5b:	8b 55 d8             	mov    -0x28(%rbp),%edx
+  5e:	8b 45 dc             	mov    -0x24(%rbp),%eax
+  61:	89 c6                	mov    %eax,%esi
+  63:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 6a <pascal+0x6a>
+  6a:	48 89 c7             	mov    %rax,%rdi
+  6d:	b8 00 00 00 00       	mov    $0x0,%eax
+  72:	e8 00 00 00 00       	call   77 <pascal+0x77>
+  77:	8b 45 ec             	mov    -0x14(%rbp),%eax
+  7a:	48 8b 5d f8          	mov    -0x8(%rbp),%rbx
+  7e:	c9                   	leave  
+  7f:	c3                   	ret    
+
+0000000000000080 <main>:
+  80:	f3 0f 1e fa          	endbr64 
+  84:	55                   	push   %rbp
+  85:	48 89 e5             	mov    %rsp,%rbp
+  88:	48 83 ec 20          	sub    $0x20,%rsp
+  8c:	89 7d ec             	mov    %edi,-0x14(%rbp)
+  8f:	48 89 75 e0          	mov    %rsi,-0x20(%rbp)
+  93:	83 7d ec 03          	cmpl   $0x3,-0x14(%rbp)
+  97:	74 25                	je     be <main+0x3e>
+  99:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  9d:	48 8b 00             	mov    (%rax),%rax
+  a0:	48 89 c6             	mov    %rax,%rsi
+  a3:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # aa <main+0x2a>
+  aa:	48 89 c7             	mov    %rax,%rdi
+  ad:	b8 00 00 00 00       	mov    $0x0,%eax
+  b2:	e8 00 00 00 00       	call   b7 <main+0x37>
+  b7:	b8 01 00 00 00       	mov    $0x1,%eax
+  bc:	eb 5c                	jmp    11a <main+0x9a>
+  be:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  c2:	48 83 c0 08          	add    $0x8,%rax
+  c6:	48 8b 00             	mov    (%rax),%rax
+  c9:	48 89 c7             	mov    %rax,%rdi
+  cc:	e8 00 00 00 00       	call   d1 <main+0x51>
+  d1:	89 45 f4             	mov    %eax,-0xc(%rbp)
+  d4:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  d8:	48 83 c0 10          	add    $0x10,%rax
+  dc:	48 8b 00             	mov    (%rax),%rax
+  df:	48 89 c7             	mov    %rax,%rdi
+  e2:	e8 00 00 00 00       	call   e7 <main+0x67>
+  e7:	89 45 f8             	mov    %eax,-0x8(%rbp)
+  ea:	8b 55 f8             	mov    -0x8(%rbp),%edx
+  ed:	8b 45 f4             	mov    -0xc(%rbp),%eax
+  f0:	89 d6                	mov    %edx,%esi
+  f2:	89 c7                	mov    %eax,%edi
+  f4:	e8 00 00 00 00       	call   f9 <main+0x79>
+  f9:	89 45 fc             	mov    %eax,-0x4(%rbp)
+  fc:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  ff:	89 c6                	mov    %eax,%esi
+ 101:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 108 <main+0x88>
+ 108:	48 89 c7             	mov    %rax,%rdi
+ 10b:	b8 00 00 00 00       	mov    $0x0,%eax
+ 110:	e8 00 00 00 00       	call   115 <main+0x95>
+ 115:	b8 00 00 00 00       	mov    $0x0,%eax
+ 11a:	c9                   	leave  
+ 11b:	c3                   	ret    
