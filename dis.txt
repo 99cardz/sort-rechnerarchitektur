@@ -1,0 +1,28 @@
+
+bad.o:  file format mach-o 64-bit x86-64
+
+Disassembly of section __TEXT,__text:
+
+0000000100003f50 <_main>:
+100003f50: 55                           pushq   %rbp
+100003f51: 48 89 e5                     movq    %rsp, %rbp
+100003f54: c7 45 fc 00 00 00 00         movl    $0, -4(%rbp)
+100003f5b: c7 45 f8 00 00 00 00         movl    $0, -8(%rbp)
+100003f62: 81 7d f8 10 27 00 00         cmpl    $10000, -8(%rbp)        ## imm = 0x2710
+100003f69: 0f 8d 3a 00 00 00            jge     0x100003fa9 <_main+0x59>
+100003f6f: c7 45 f4 00 00 00 00         movl    $0, -12(%rbp)
+100003f76: 81 7d f4 a0 86 01 00         cmpl    $100000, -12(%rbp)      ## imm = 0x186A0
+100003f7d: 0f 8d 13 00 00 00            jge     0x100003f96 <_main+0x46>
+100003f83: e9 00 00 00 00               jmp     0x100003f88 <_main+0x38>
+100003f88: 8b 45 f4                     movl    -12(%rbp), %eax
+100003f8b: 83 c0 01                     addl    $1, %eax
+100003f8e: 89 45 f4                     movl    %eax, -12(%rbp)
+100003f91: e9 e0 ff ff ff               jmp     0x100003f76 <_main+0x26>
+100003f96: e9 00 00 00 00               jmp     0x100003f9b <_main+0x4b>
+100003f9b: 8b 45 f8                     movl    -8(%rbp), %eax
+100003f9e: 83 c0 01                     addl    $1, %eax
+100003fa1: 89 45 f8                     movl    %eax, -8(%rbp)
+100003fa4: e9 b9 ff ff ff               jmp     0x100003f62 <_main+0x12>
+100003fa9: 31 c0                        xorl    %eax, %eax
+100003fab: 5d                           popq    %rbp
+100003fac: c3                           retq
