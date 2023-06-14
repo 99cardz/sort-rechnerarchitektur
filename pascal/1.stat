@@ -1,0 +1,22 @@
+# started on Wed Jun 14 16:48:45 2023
+
+
+ Performance counter stats for './overhead1 40 30':
+
+              0.34 msec task-clock                #    0.165 CPUs utilized          
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                54      page-faults               #    0.160 M/sec                  
+           1234486      cycles                    #    3.652 GHz                    
+            881744      stalled-cycles-frontend   #   71.43% frontend cycles idle   
+            720867      instructions              #    0.58  insn per cycle         
+                                                  #    1.22  stalled cycles per insn
+            147257      branches                  #  435.651 M/sec                  
+              8285      branch-misses             #    5.63% of all branches        
+
+       0.002047545 seconds time elapsed
+
+       0.000984000 seconds user
+       0.000000000 seconds sys
+
+
