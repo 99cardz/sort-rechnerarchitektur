@@ -1,0 +1,22 @@
+# started on Wed Jun 14 16:39:36 2023
+
+
+ Performance counter stats for './pascal3 40 30':
+
+           1741.23 msec task-clock                #    0.999 CPUs utilized          
+                 5      context-switches          #    0.003 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                53      page-faults               #    0.030 K/sec                  
+        6707996555      cycles                    #    3.852 GHz                    
+        2483268433      stalled-cycles-frontend   #   37.02% frontend cycles idle   
+       16370941016      instructions              #    2.44  insn per cycle         
+                                                  #    0.15  stalled cycles per insn
+        2953196385      branches                  # 1696.041 M/sec                  
+           4614320      branch-misses             #    0.16% of all branches        
+
+       1.742318920 seconds time elapsed
+
+       1.741657000 seconds user
+       0.000000000 seconds sys
+
+
