@@ -4,14 +4,12 @@
 #include <stdio.h>
 
 int pascal(int row, int col) {
-    int test;
     int value;
     if (col == 0 || row == col) {
         value = 1;
     } else {
         value = pascal(row-1, col-1) + pascal(row-1, col);
     }
-    printf("row: %d col: %d value: %d\n", row, col, value);
     return value;
 }
 int main(int argc, char *argv[]) {
