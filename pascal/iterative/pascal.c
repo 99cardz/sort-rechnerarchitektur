@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // Function to calculate the value at row and column in Pascal's triangle
 int pascal(int row, int col) {
@@ -32,6 +33,7 @@ int main(int argc, char *argv[]) {
 
     int r = pascal(row, column);
 
+    printf("%d", r);
     
     return 0;
 }

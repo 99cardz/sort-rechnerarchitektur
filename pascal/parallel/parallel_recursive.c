@@ -3,31 +3,32 @@
 #include <omp.h>
 
 int pascal(int row, int col) {
-    int** triangle = (int**)malloc((row + 1) * sizeof(int*));
-
-    // Erzeuge Pascal's Triangle
-    for (int i = 0; i <= row; i++) {
-        triangle[i] = (int*)malloc((i + 1) * sizeof(int));
-        #pragma omp parallel for
-        for (int j = 0; j <= i; j++) {
-            if (j == 0 || j == i) {
-                triangle[i][j] = 1;
-            } else {
-                // Berechnung der Werte in parallelen Schritten
-                triangle[i][j] = triangle[i - 1][j - 1] + triangle[i - 1][j];
+    int value;
+    if (col == 0 || row == col) {
+        value = 1;
+    } else {
+        #pragma omp parallel
+        {
+            int left, top;
+            #pragma omp sections
+            {
+                #pragma omp section
+                {
+                    left = pascal(row - 1, col - 1);
+                }
+                #pragma omp section
+                {
+                    top = pascal(row - 1, col);
+                }
+            }
+            #pragma omp barrier
+            #pragma omp single
+            {
+                value = left + top;
             }
         }
     }
-
-    int result = triangle[row][col];
-
-    // Speicher freigeben
-    for (int i = 0; i <= row; i++) {
-        free(triangle[i]);
-    }
-    free(triangle);
-
-    return result;
+    return value;
 }
 
 int main(int argc, char* argv[]) {
@@ -39,9 +40,9 @@ int main(int argc, char* argv[]) {
     int row = atoi(argv[1]);
     int column = atoi(argv[2]);
 
-    int r = pascal(row, column);
+    int result = pascal(row, column);
 
-    printf("value is %d\n", r);
+    printf("Value at row %d, column %d: %d\n", row, column, result);
 
     return 0;
 }
