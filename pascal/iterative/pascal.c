@@ -32,7 +32,6 @@ int main(int argc, char *argv[]) {
 
     int r = pascal(row, column);
 
-    printf("value is %d\n", r);
     
     return 0;
 }
